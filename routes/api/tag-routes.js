@@ -65,9 +65,7 @@ router.put('/:id', (req, res) => {
 // establishing delete route to delete tag based on id
 router.delete('/:id', (req, res) => {
   // deletes tag based on matching id
-  Tag.destroy({
-    where: { id: req.params.id}
-  })
+  Tag.destroy({ where: { id: req.params.id}})
   .then((tag) => res.status(200).json(tag))
   .catch((err) => res.status(404).json(err))
 });

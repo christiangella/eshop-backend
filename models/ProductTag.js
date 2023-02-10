@@ -4,14 +4,17 @@ const sequelize = require('../config/connection');
 
 class ProductTag extends Model {}
 
+// creating a model instance of product tag
 ProductTag.init(
   {
+    // defining and specifying id properties
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
+    // defining and specifying tag_id properties
     tag_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -19,6 +22,7 @@ ProductTag.init(
         model: 'tag'
       }
     },
+    // defining and specifying product id properties
     product_id: {
       type: DataTypes.INTEGER,
       references: {
