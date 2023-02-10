@@ -1,7 +1,10 @@
+//requiring env file
 require('dotenv').config();
 
+//installing sequelize
 const Sequelize = require('sequelize');
 
+// connecting to env file
 const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)
   : new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
