@@ -30,6 +30,7 @@ router.get('/:id', (req, res) => {
       }
     ]
   })
+  .then((products) => res.json(products))
   .catch((err) => { res.status(400).json(err)})
 });
 
